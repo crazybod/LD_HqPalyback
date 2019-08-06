@@ -1,10 +1,10 @@
 C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Debug\HqPlayback.exe.config
 C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Debug\HqPlayback.exe
 C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Debug\HqPlayback.pdb
-C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Debug\HqPlayback.csprojAssemblyReference.cache
 C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Debug\HqPlayback.frmHqPlayback.resources
 C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Debug\HqPlayback.Properties.Resources.resources
 C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Debug\HqPlayback.csproj.GenerateResource.cache
 C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Debug\HqPlayback.csproj.CoreCompileInputs.cache
 C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Debug\HqPlayback.exe
 C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Debug\HqPlayback.pdb
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Debug\HqPlayback.csprojAssemblyReference.cache
