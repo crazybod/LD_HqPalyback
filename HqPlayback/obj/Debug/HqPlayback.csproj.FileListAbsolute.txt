@@ -7,4 +7,9 @@ C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Debug\HqPlayback.csp
 C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Debug\HqPlayback.csproj.CoreCompileInputs.cache
 C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Debug\HqPlayback.exe
 C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Debug\HqPlayback.pdb
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Debug\LDBizTagDefine.dll
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Debug\LDsdkDefineEx.dll
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Debug\LDBizTagDefine.pdb
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Debug\LDsdkDefineEx.pdb
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Debug\HqPlayback.csproj.CopyComplete
 C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Debug\HqPlayback.csprojAssemblyReference.cache

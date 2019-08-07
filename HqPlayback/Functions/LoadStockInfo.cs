@@ -13,6 +13,8 @@ namespace HqPlayback.Functions
 {
     class LoadStockInfo
     {
+        public static object[,] excelData;
+        static string Path = Environment.CurrentDirectory;
         /// <summary>
         /// 初始化加载交易市场和证券信息
         /// </summary>
@@ -26,7 +28,7 @@ namespace HqPlayback.Functions
 
 
 
-            object[,] excelData = GetExcelRangeData(@"D:\Data.xlsx");
+            excelData = GetExcelRangeData($@"{Path}\Data.xlsx");
             int rows = excelData.GetLength(0);
             for (int i = 1; i < rows; i++)
             {
@@ -99,7 +101,6 @@ namespace HqPlayback.Functions
                 int rows = workSheet.UsedRange.Cells.Rows.Count; //得到行数
 
                 //使用下述语句可以从头读取到最后，按需使用
-                //var maxN = workSheet.Range[startCell].End[XlDirection.xlDown].Row;
                 return workSheet.Range["A2" + ":" + "F"+ rows.ToString()].Value2;
             }
             catch (Exception e)
