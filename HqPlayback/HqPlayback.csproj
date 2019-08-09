@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,11 +34,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LDBizTagDefine">
-      <HintPath>E:\repos\TestClient\TestClient\libs\LDBizTagDefine.dll</HintPath>
+    <Reference Include="LDBizTagDefine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\LDBizTagDefine.dll</HintPath>
     </Reference>
-    <Reference Include="LDsdkDefineEx">
-      <HintPath>E:\repos\TestClient\TestClient\libs\LDsdkDefineEx.dll</HintPath>
+    <Reference Include="LDsdkDefine, Version=1.0.6788.19191, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\LDsdkDefine.dll</HintPath>
+    </Reference>
+    <Reference Include="LDsdkDefineEx, Version=1.0.6765.31483, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\LDsdkDefineEx.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
