@@ -39,8 +39,10 @@ namespace HqPlayback
         /// <summary>
         /// 延迟时间(毫秒)
         /// </summary>
-        int delay = 0;
+        double delay = 0;
 
+        Bitmap bmp;
+        Graphics grap;
         public frmHqPlayback()
         {
             InitializeComponent();
@@ -49,7 +51,9 @@ namespace HqPlayback
         private void FrmHqPlayback_Load(object sender, EventArgs e)
         {
             trvStockInfo.Nodes.AddRange(LoadStockInfo.LoadSrcData());
-            sendConnectionAdapter = Connection.CreateConnect("hq");
+            sendConnectionAdapter = Connection.CreateConnect("trade");
+            bmp = new Bitmap(pbShow.Width, pbShow.Height);
+            grap = Graphics.FromImage(bmp);
         }
 
         /// <summary>
@@ -92,8 +96,10 @@ namespace HqPlayback
         /// <summary>
         /// 发送数据并且绘制正弦曲线
         /// </summary>
-        private async void DrawSin(PaintEventArgs e)
+        private async void DrawSin()
         {
+            
+            
             try
             {
                 int Zoom = 15;  //放大倍数
@@ -102,10 +108,14 @@ namespace HqPlayback
                 float x1 = (float)(0 * Math.PI * Zoom / 180 + center.X);
                 float y1 = (float)(Math.Sin(0 * Math.PI / 180) * 11 * Zoom + center.Y);
 
-                e.Graphics.DrawLine(Pens.Black, 0, center.Y, pbShow.Width, center.Y);  //x坐标轴
-                e.Graphics.DrawLine(Pens.Black, center.X, 0, center.X, pbShow.Height);  //y坐标轴
+                grap.DrawLine(Pens.Black, 0, center.Y, pbShow.Width, center.Y);  //x坐标轴
+                grap.DrawLine(Pens.Black, center.X, 0, center.X, pbShow.Height);  //y坐标轴
 
-                for (double i = 0.004; i < 360 * 4; i += 0.004)   //角
+                LDFastMessageAdapter fastMsg = new LDFastMessageAdapter("pubL.16.5", 0);
+                StockLevelRealTimeData stockFiled = new StockLevelRealTimeData();
+                
+
+                for (double i = 1; i < 360 * 4; i++)   //角
                 {
                     if (isPause)
                     {
@@ -114,90 +124,106 @@ namespace HqPlayback
                     float x2 = (float)(i * Math.PI * Zoom / 180 + center.X);
                     float y2 = (float)Math.Sin(i * Math.PI / 180) * (-1) * 11 * Zoom + center.Y;
 
-                    e.Graphics.DrawLine(Pens.Red, x1, y1, x2, y2);
-
-                    Stopwatch sw = new Stopwatch();
-                    sw.Start();
+                    grap.DrawLine(Pens.Red, x1, y1, x2, y2);
+                    grap.Save();
+                    this.pbShow.Invoke(new Action(() => { pbShow.Image = bmp; }));
 
                     #region 针对每个券码发送一个生成并发送一个数据包
                     int rows = LoadStockInfo.excelData.GetLength(0);
-                    for (int j = 1; j < rows; j++)
+                    for ( int j = 1; j < rows; j++)
                     {
                         //券码
                         string stockNo = LoadStockInfo.excelData[j, 1].ToString();
                         char[] stockNos = stockNo.ToCharArray();
+
+                        if (stockNos.Length < 5 || stockNos.Length > 6)
+                        {
+                            continue;
+                        }
+                        if (stockNos.Length < 6)
+                        {
+                            var tempStocks = stockNos.ToList();
+                            tempStocks.Add('\0');
+                            stockNos = tempStocks.ToArray();
+                        }
                         //涨停价
                         double upPrice = Convert.ToDouble(LoadStockInfo.excelData[j, 4]);
                         //跌停价
                         double downPrice = Convert.ToDouble(LoadStockInfo.excelData[j, 5]);
                         //初始价格
-                        double price1 = (upPrice + downPrice) / 2.00;
+                        double price0 = (upPrice + downPrice) / 2.00;
                         //递增/递减价格
-                        double price2 = (upPrice - price1) * Math.Sin(i * Math.PI / 180) + price1;
-
-                        LDFastMessageAdapter fastMsg = new LDFastMessageAdapter("pubL.16.5", 0);
-                        if (fastMsg == null)
-                        {
-                            return;
-                        }
+                        double price1 = (upPrice - price0) * Math.Sin(i * Math.PI / 180) + price0;
+                        double price2 = (upPrice - price0) * Math.Sin((i+1) * Math.PI / 180) + price0;
+                        double price3 = (upPrice - price0) * Math.Sin((i + 2) * Math.PI / 180) + price0;
+                        double price4 = (upPrice - price0) * Math.Sin((i + 3) * Math.PI / 180) + price0;
+                        double price5 = (upPrice - price0) * Math.Sin((i + 4) * Math.PI / 180) + price0;
 
                         fastMsg.SetInt32(LDBizTag.LDBIZ_EXCH_NO_INT, 1);
                         fastMsg.SetString(LDBizTag.LDBIZ_STOCK_CODE_STR, stockNo);
 
                         //开始组装数据包
                         int tmpValue = 1000;
-                        StockLevelRealTimeData stockFiled = new StockLevelRealTimeData();
+                        int tmpValue0 = 100;
+
                         stockFiled.PriceUnit = tmpValue;
                         stockFiled.UpPrice = (int)(upPrice * tmpValue);
                         stockFiled.DownPrice = (int)(downPrice * tmpValue);
                         stockFiled.FiveDayVol = 0;
-                        stockFiled.OpenPrice = 0;
-                        stockFiled.PrevClose = 0;
+                        stockFiled.OpenPrice = (int)(price0 * tmpValue);
+                        stockFiled.PrevClose = (int)(price0 * tmpValue); ;
 
-                        stockFiled.BuyPrice1 = (int)(price2 * tmpValue);
-                        stockFiled.BuyPrice2 = 0;
-                        stockFiled.BuyPrice3 = 0;
-                        stockFiled.BuyPrice4 = 0;
-                        stockFiled.BuyPrice5 = 0;
-                        stockFiled.BuyCount1 = 0;
-                        stockFiled.BuyCount2 = 0;
-                        stockFiled.BuyCount3 = 0;
-                        stockFiled.BuyCount4 = 0;
-                        stockFiled.BuyCount5 = 0;
+                        stockFiled.BuyPrice1 = (int)(price1 * tmpValue);
+                        stockFiled.BuyPrice2 = (int)(price2 * tmpValue);
+                        stockFiled.BuyPrice3 = (int)(price3 * tmpValue);
+                        stockFiled.BuyPrice4 = (int)(price4 * tmpValue);
+                        stockFiled.BuyPrice5 = (int)(price5 * tmpValue);
+                        stockFiled.BuyCount1 = (uint)(tmpValue0 * i);
+                        stockFiled.BuyCount2 = (uint)(tmpValue0 * i * 2);
+                        stockFiled.BuyCount3 = (uint)(tmpValue0 * i * 3);
+                        stockFiled.BuyCount4 = (uint)(tmpValue0 * i * 4);
+                        stockFiled.BuyCount5 = (uint)(tmpValue0 * i * 5);
 
-                        stockFiled.SellPrice1 = j*tmpValue;
-                        stockFiled.SellPrice2 = 0;
-                        stockFiled.SellPrice3 = 0;
-                        stockFiled.SellPrice4 = 0;
-                        stockFiled.SellPrice5 = 0;
-                        stockFiled.SellCount1 = 0;
-                        stockFiled.SellCount2 = 0;
-                        stockFiled.SellCount3 = 0;
-                        stockFiled.SellCount4 = 0;
-                        stockFiled.SellCount5 = 0;
+                        stockFiled.SellPrice1 = (int)(price1 * tmpValue);
+                        stockFiled.SellPrice2 = (int)(price2 * tmpValue);
+                        stockFiled.SellPrice3 = (int)(price3 * tmpValue);
+                        stockFiled.SellPrice4 = (int)(price4 * tmpValue);
+                        stockFiled.SellPrice5 = (int)(price5 * tmpValue);
+                        stockFiled.SellCount1 = (uint)(tmpValue0 * i);
+                        stockFiled.SellCount2 = (uint)(tmpValue0 * i * 2);
+                        stockFiled.SellCount3 = (uint)(tmpValue0 * i * 3);
+                        stockFiled.SellCount4 = (uint)(tmpValue0 * i * 4);
+                        stockFiled.SellCount5 = (uint)(tmpValue0 * i * 5);
 
-                        stockFiled.AvgPrice = 0;
-                        stockFiled.MaxPrice = 0;
-                        stockFiled.MinPrice = 0;
-                        stockFiled.NewPrice = 0;
+                        stockFiled.AvgPrice = (int)(price1 * tmpValue) * (uint)(tmpValue0 * i) + (int)(price2 * tmpValue) * (uint)(tmpValue0 * i * 2)
+                            + (int)(price3 * tmpValue) * (uint)(tmpValue0 * i * 3) + (int)(price4 * tmpValue) * (uint)(tmpValue0 * i * 4)
+                            + (int)(price5 * tmpValue) * (uint)(tmpValue0 * i * 5);
+
+                        stockFiled.MaxPrice = (int)(price5 * tmpValue);
+                        stockFiled.MinPrice = (int)(price1 * tmpValue);
+                        stockFiled.NewPrice = (int)(price3 * tmpValue);
                         stockFiled.HandNum = 100;
                         stockFiled.CodeType = 4361;
                         stockFiled.Decimal = 3;
                         stockFiled.StockCode = stockNos;
-                        stockFiled.Total = 0;
+                        stockFiled.Total = (uint)(tmpValue0 * i * 10);
+
                         //将数据包转化成非托管类型
                         IntPtr ptr = Marshal.AllocHGlobal(Marshal.SizeOf(stockFiled));
                         Marshal.StructureToPtr(stockFiled, ptr, false);
                         fastMsg.SetRawData(LDBizTag.LDBIZ_QUOT_PRICE_INFO_STR, ptr, Marshal.SizeOf(stockFiled));
 
-                        await SendPackage(fastMsg);
+                        //制造阻塞，确保数据包发送之后才进行内存回收
+                        int result = await SendPackage(fastMsg);
+
+                        fastMsg.FreeMsg();
+                        Marshal.FreeHGlobal(ptr);
+
+                        Thread.Sleep(TimeSpan.FromMilliseconds(delay));
                     }
                     #endregion
-                    sw.Stop();
-                    var time = sw.ElapsedMilliseconds;
                     x1 = x2;
                     y1 = y2;
-                    Thread.Sleep(delay);
                 }
 
                 this.btnStart.Invoke(new Action(() => { btnStart.Enabled = true; }));
@@ -209,11 +235,12 @@ namespace HqPlayback
             }
         }
 
-        private Task SendPackage(LDFastMessageAdapter fastMsg)
+        private Task<int> SendPackage(LDFastMessageAdapter fastMsg)
         {
-            Task tsk = Task.Run(new Action(() => {
-                sendConnectionAdapter.PubTopics("quote.realtime", fastMsg);
-                fastMsg.FreeMsg();
+            int result = -1;
+            Task<int> tsk = Task<int>.Run(new Func<int>(() => {
+                result = sendConnectionAdapter.PubTopics("quote.realtime", fastMsg);
+                return result;
             }));
             return tsk;
         }
@@ -225,9 +252,9 @@ namespace HqPlayback
         /// <param name="e"></param>
         private void BtnStart_Click(object sender, EventArgs e)
         {
-            delay = txtDelay.Text == "" ? 0 : Convert.ToInt32(txtDelay.Text);
-            pbShow.CreateGraphics().Clear(this.BackColor);
-            Task.Run(() => DrawSin(new PaintEventArgs(pbShow.CreateGraphics(), Rectangle.Empty)));
+            delay = txtDelay.Text == "" ? 0 : Convert.ToDouble(txtDelay.Text);
+            grap.Clear(this.BackColor);
+            Task.Run(() => DrawSin());
             this.btnStart.Enabled = false;//防止多次点击
         }
 
@@ -238,7 +265,7 @@ namespace HqPlayback
         /// <param name="e"></param>
         private void BtnRun_Click(object sender, EventArgs e)
         {
-            delay = txtDelay.Text == "" ? 0 : Convert.ToInt32(txtDelay.Text);
+            delay = txtDelay.Text == "" ? 0 : Convert.ToDouble(txtDelay.Text);
             isPause = false;
             waitHandle.Set();
         }

@@ -1,0 +1,322 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly LDsdkDefineEx, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class LDsdkDefineEx.CConfigIAdapter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    CIniConfigI* Config : Public
+  Methods:
+    Init(): PrivateScope, Public, HideBySig
+    UnInit(): PrivateScope, Public, HideBySig
+    Load(String): PrivateScope, Public, HideBySig
+    Save(String): PrivateScope, Public, HideBySig
+    GetString(String, String, String): PrivateScope, Public, HideBySig
+    GetInt(String, String, Int32): PrivateScope, Public, HideBySig
+    SetString(String, String, String): PrivateScope, Public, HideBySig
+    SetInt(String, String, Int32): PrivateScope, Public, HideBySig
+    Release(): PrivateScope, Public, HideBySig
+Class LDsdkDefineEx.FutuLevelRealTimeData: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String TradingDay : Public, HasFieldMarshal
+    System.String InstrumentID : Public, HasFieldMarshal
+    System.String ExchangeID : Public, HasFieldMarshal
+    System.String ExchangeInstID : Public, HasFieldMarshal
+    Double LastPrice : Public
+    Double PreSettlementPrice : Public
+    Double PreClosePrice : Public
+    Double PreOpenInterest : Public
+    Double OpenPrice : Public
+    Double HighestPrice : Public
+    Double LowestPrice : Public
+    Int32 Volume : Public
+    Int32 LastVolume : Public
+    Double Turnover : Public
+    Double OpenInterest : Public
+    Double ClosePrice : Public
+    Double SettlementPrice : Public
+    Double UpperLimitPrice : Public
+    Double LowerLimitPrice : Public
+    Double PreDelta : Public
+    Double CurrDelta : Public
+    System.String UpdateTime : Public, HasFieldMarshal
+    Int32 UpdateMillisec : Public
+    Double BidPrice1 : Public
+    Int32 BidVolume1 : Public
+    Double AskPrice1 : Public
+    Int32 AskVolume1 : Public
+    Double BidPrice2 : Public
+    Int32 BidVolume2 : Public
+    Double AskPrice2 : Public
+    Int32 AskVolume2 : Public
+    Double BidPrice3 : Public
+    Int32 BidVolume3 : Public
+    Double AskPrice3 : Public
+    Int32 AskVolume3 : Public
+    Double BidPrice4 : Public
+    Int32 BidVolume4 : Public
+    Double AskPrice4 : Public
+    Int32 AskVolume4 : Public
+    Double BidPrice5 : Public
+    Int32 BidVolume5 : Public
+    Double AskPrice5 : Public
+    Int32 AskVolume5 : Public
+    Double AveragePrice : Public
+Class LDsdkDefineEx.StockLevelRealTimeData: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int16 CodeType : Public
+    Char[] StockCode : Public, HasFieldMarshal
+    Int32 PrevClose IsLong : Public
+    UInt32 FiveDayVol IsLong : Public
+    Int32 PriceUnit IsLong : Public
+    Int32 Decimal IsLong : Public
+    Int32 HandNum IsLong : Public
+    Int32 UpPrice IsLong : Public
+    Int32 DownPrice IsLong : Public
+    Int32 StopFlag IsLong : Public
+    Int32 Ext1 IsLong : Public
+    Int32 OpenPrice IsLong : Public
+    Int32 MaxPrice IsLong : Public
+    Int32 MinPrice IsLong : Public
+    Int32 NewPrice IsLong : Public
+    UInt32 Total IsLong : Public
+    Single AvgPrice : Public
+    Int32 BuyPrice1 IsLong : Public
+    UInt32 BuyCount1 IsLong : Public
+    Int32 BuyPrice2 IsLong : Public
+    UInt32 BuyCount2 IsLong : Public
+    Int32 BuyPrice3 IsLong : Public
+    UInt32 BuyCount3 IsLong : Public
+    Int32 BuyPrice4 IsLong : Public
+    UInt32 BuyCount4 IsLong : Public
+    Int32 BuyPrice5 IsLong : Public
+    UInt32 BuyCount5 IsLong : Public
+    Int32 SellPrice1 IsLong : Public
+    UInt32 SellCount1 IsLong : Public
+    Int32 SellPrice2 IsLong : Public
+    UInt32 SellCount2 IsLong : Public
+    Int32 SellPrice3 IsLong : Public
+    UInt32 SellCount3 IsLong : Public
+    Int32 SellPrice4 IsLong : Public
+    UInt32 SellCount4 IsLong : Public
+    Int32 SellPrice5 IsLong : Public
+    UInt32 SellCount5 IsLong : Public
+    Int32 BuyPrice6 IsLong : Public
+    UInt32 BuyCount6 IsLong : Public
+    Int32 BuyPrice7 IsLong : Public
+    UInt32 BuyCount7 IsLong : Public
+    Int32 BuyPrice8 IsLong : Public
+    UInt32 BuyCount8 IsLong : Public
+    Int32 BuyPrice9 IsLong : Public
+    UInt32 BuyCount9 IsLong : Public
+    Int32 BuyPrice10 IsLong : Public
+    UInt32 BuyCount10 IsLong : Public
+    Int32 SellPrice6 IsLong : Public
+    UInt32 SellCount6 IsLong : Public
+    Int32 SellPrice7 IsLong : Public
+    UInt32 SellCount7 IsLong : Public
+    Int32 SellPrice8 IsLong : Public
+    UInt32 SellCount8 IsLong : Public
+    Int32 SellPrice9 IsLong : Public
+    UInt32 SellCount9 IsLong : Public
+    Int32 SellPrice10 IsLong : Public
+    UInt32 SellCount10 IsLong : Public
+    UInt32 TickCount IsLong : Public
+    Single BuyTotal : Public
+    Single WeightedAvgBidPx : Public
+    Single AltWeightedAvgBidPx : Public
+    Single SellTotal : Public
+    Single WeightedAvgOfferPx : Public
+    Single AltWeightedAvgOfferPx : Public
+    Single IPOV : Public
+    UInt32 TimeTick IsLong : Public
+    Double Time_stamp1 : Public
+    Double Time_stamp2 : Public
+Class LDsdkDefineEx.LDUnKnownAdapter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class LDsdkDefineEx.LDRecordAdapter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :LDsdkDefineEx.LDUnKnownAdapter
+    Void .ctor(IRecord*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    IRecord* Record : Public
+  Methods:
+    IsExist(Int32): PrivateScope, Public, HideBySig
+    GetInt32(Int32): PrivateScope, Public, HideBySig
+    GetInt64(Int32): PrivateScope, Public, HideBySig
+    GetString(Int32): PrivateScope, Public, HideBySig
+    GetRawData(Int32, Int32&): PrivateScope, Public, HideBySig
+    GetDouble(Int32): PrivateScope, Public, HideBySig
+    SetInt32(Int32, Int32): PrivateScope, Public, HideBySig
+    SetInt64(Int32, UInt64): PrivateScope, Public, HideBySig
+    SetString(Int32, String): PrivateScope, Public, HideBySig
+    SetRawData(Int32, IntPtr, Int32): PrivateScope, Public, HideBySig
+    SetDouble(Int32, Double): PrivateScope, Public, HideBySig
+    SetGroup(Int32): PrivateScope, Public, HideBySig
+    GetGroup(Int32): PrivateScope, Public, HideBySig
+    GetFieldCount(): PrivateScope, Public, HideBySig
+    GetFieldType(Int32): PrivateScope, Public, HideBySig
+    GetInt32byIndex(Int32): PrivateScope, Public, HideBySig
+    GetInt64byIndex(Int32): PrivateScope, Public, HideBySig
+    GetStringbyIndex(Int32): PrivateScope, Public, HideBySig
+    GetRawDatabyIndex(Int32, Int32&): PrivateScope, Public, HideBySig
+    GetDoublebyIndex(Int32): PrivateScope, Public, HideBySig
+    GetFieldNamebyIndex(Int32): PrivateScope, Public, HideBySig
+    IsExistbyIndex(Int32): PrivateScope, Public, HideBySig
+    SetInt32byIndex(Int32, Int32): PrivateScope, Public, HideBySig
+    SetInt64byIndex(Int32, UInt64): PrivateScope, Public, HideBySig
+    SetStringbyIndex(Int32, String): PrivateScope, Public, HideBySig
+    SetRawDatabyIndex(Int32, IntPtr, Int32): PrivateScope, Public, HideBySig
+    SetDoublebyIndex(Int32, Double): PrivateScope, Public, HideBySig
+Class LDsdkDefineEx.LDGroupAdapter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :LDsdkDefineEx.LDUnKnownAdapter
+    Void .ctor(IGroup*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    IGroup* ld : Public
+  Methods:
+    GetRecordCount(): PrivateScope, Public, HideBySig
+    GetRecord(Int32): PrivateScope, Public, HideBySig
+    AddRecord(): PrivateScope, Public, HideBySig
+    SortbyFields(Int32, Int32* IsConst IsConst): PrivateScope, Public, HideBySig
+    JoinTwoResultByFields(LDGroupAdapter, LDGroupAdapter, Int32, Int32* IsConst IsConst): PrivateScope, Public, HideBySig
+    JoinWithAnotherResultByFields(LDGroupAdapter, Int32, Int32* IsConst IsConst): PrivateScope, Public, HideBySig
+    InitCalculationSets(Int32): PrivateScope, Public, HideBySig
+    AddCalculationFormula(Int32, String): PrivateScope, Public, HideBySig
+    Calculation(): PrivateScope, Public, HideBySig
+Class LDsdkDefineEx.LDFastMessageAdapter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :LDsdkDefineEx.LDRecordAdapter
+    Void .ctor(IFastMessage*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    IFastMessage* FastMessage : Public
+  Methods:
+    SetBuffer(IntPtr, Int32): PrivateScope, Public, HideBySig
+    GetBuffer(Int32&): PrivateScope, Public, HideBySig
+    GetLastErrInfo(): PrivateScope, Public, HideBySig
+    FreeMsg(): PrivateScope, Public, HideBySig
+    Reversal(): PrivateScope, Public, HideBySig
+    SetMsgIdentity(String): PrivateScope, Public, HideBySig
+    GetMsgIdentity(): PrivateScope, Public, HideBySig
+    BuildAnsInfoByReq(LDFastMessageAdapter): PrivateScope, Public, HideBySig
+    GetBizBodyRecord(): PrivateScope, Public, HideBySig
+    GetHeadRecord(): PrivateScope, Public, HideBySig
+    FillWithAnotherMsg(LDFastMessageAdapter): PrivateScope, Public, HideBySig
+Class LDsdkDefineEx.RspOnConnect: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class LDsdkDefineEx.RspOnRegister: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class LDsdkDefineEx.RspOnClose: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(String): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(String, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class LDsdkDefineEx.RspOnSent: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Int32): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(Int32, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class LDsdkDefineEx.RspOnReceivedEx: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Int32, LDFastMessageAdapter, Int32): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(Int32, LDFastMessageAdapter, Int32, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class LDsdkDefineEx.RspOnPublish: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(String, LDFastMessageAdapter): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(String, LDFastMessageAdapter, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+Class LDsdkDefineEx.CConnectionIAdapter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Events:
+    LDsdkDefineEx.RspOnPublish OnPublish: SpecialName
+    LDsdkDefineEx.RspOnReceivedEx OnReceivedEx: SpecialName
+    LDsdkDefineEx.RspOnSent OnSent: SpecialName
+    LDsdkDefineEx.RspOnClose OnClose: SpecialName
+    LDsdkDefineEx.RspOnRegister OnRegister: SpecialName
+    LDsdkDefineEx.RspOnConnect OnConnect: SpecialName
+  Methods:
+    add_OnConnect(RspOnConnect): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnConnect(RspOnConnect): PrivateScope, Public, HideBySig, SpecialName
+    raise_OnConnect(): PrivateScope, Public, HideBySig, SpecialName
+    add_OnRegister(RspOnRegister): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnRegister(RspOnRegister): PrivateScope, Public, HideBySig, SpecialName
+    raise_OnRegister(): PrivateScope, Public, HideBySig, SpecialName
+    add_OnClose(RspOnClose): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnClose(RspOnClose): PrivateScope, Public, HideBySig, SpecialName
+    raise_OnClose(String): PrivateScope, Public, HideBySig, SpecialName
+    add_OnSent(RspOnSent): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnSent(RspOnSent): PrivateScope, Public, HideBySig, SpecialName
+    raise_OnSent(Int32): PrivateScope, Public, HideBySig, SpecialName
+    add_OnReceivedEx(RspOnReceivedEx): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnReceivedEx(RspOnReceivedEx): PrivateScope, Public, HideBySig, SpecialName
+    raise_OnReceivedEx(Int32, LDFastMessageAdapter, Int32): PrivateScope, Public, HideBySig, SpecialName
+    add_OnPublish(RspOnPublish): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnPublish(RspOnPublish): PrivateScope, Public, HideBySig, SpecialName
+    raise_OnPublish(String, LDFastMessageAdapter): PrivateScope, Public, HideBySig, SpecialName
+    Create(String): PrivateScope, Public, HideBySig
+    Connect(Int32): PrivateScope, Public, HideBySig
+    SubTopic(String, String, Int32): PrivateScope, Public, HideBySig
+    UnSubTopic(String, String): PrivateScope, Public, HideBySig
+    GetServerAddress(Int32): PrivateScope, Public, HideBySig
+    GetStatus(): PrivateScope, Public, HideBySig
+    SendAndReceive(String, LDFastMessageAdapter, LDFastMessageAdapter&, Int32): PrivateScope, Public, HideBySig
+    AsyncSend(String, LDFastMessageAdapter, Int32): PrivateScope, Public, HideBySig
+    AsyncAns(String, LDFastMessageAdapter, Int32): PrivateScope, Public, HideBySig
+    GetSelfAddress(Int32&): PrivateScope, Public, HideBySig
+    GetSelfMac(): PrivateScope, Public, HideBySig
+    GetHdSerialNo(): PrivateScope, Public, HideBySig
+    Release(): PrivateScope, Public, HideBySig
+    SubTopics(String, LDFastMessageAdapter): PrivateScope, Public, HideBySig
+    UnSubAllTopics(): PrivateScope, Public, HideBySig
+    UnSubOneTopic(String): PrivateScope, Public, HideBySig
+    PubTopics(String, LDFastMessageAdapter): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Struct LDsdkDefineEx.ELDDATATYPE: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Byte value__ : Public, SpecialName, RTSpecialName
+    LDsdkDefineEx.ELDDATATYPE LD_DATATYPE_STRING = 83 : Public, Static, Literal, HasDefault
+    LDsdkDefineEx.ELDDATATYPE LD_DATATYPE_BIGDECIMAL = 66 : Public, Static, Literal, HasDefault
+    LDsdkDefineEx.ELDDATATYPE LD_DATATYPE_CHAR = 67 : Public, Static, Literal, HasDefault
+    LDsdkDefineEx.ELDDATATYPE LD_DATATYPE_INT = 73 : Public, Static, Literal, HasDefault
+    LDsdkDefineEx.ELDDATATYPE LD_DATATYPE_LONG = 76 : Public, Static, Literal, HasDefault
+    LDsdkDefineEx.ELDDATATYPE LD_DATATYPE_DOUBLE = 83 : Public, Static, Literal, HasDefault
+    LDsdkDefineEx.ELDDATATYPE LD_DATATYPE_BINARY = 82 : Public, Static, Literal, HasDefault
+Struct LDsdkDefineEx.ConnectionStatus: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    UInt32 value__ : Public, SpecialName, RTSpecialName
+    LDsdkDefineEx.ConnectionStatus Disconnected = 0 : Public, Static, Literal, HasDefault
+    LDsdkDefineEx.ConnectionStatus Connected = 1 : Public, Static, Literal, HasDefault
+    LDsdkDefineEx.ConnectionStatus Registered = 2 : Public, Static, Literal, HasDefault
+    LDsdkDefineEx.ConnectionStatus IsClosing = 4 : Public, Static, Literal, HasDefault

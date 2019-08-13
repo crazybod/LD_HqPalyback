@@ -36,7 +36,7 @@ namespace HqPlayback.Functions
         {
             CConnectionIAdapter ConnectionAdapter = new CConnectionIAdapter(ConName);
             long IntUUID = GenerateIntID();
-            ConnectionAdapter.Create(IntUUID.ToString() + ConName);
+            int result = ConnectionAdapter.Create(IntUUID.ToString() + ConName);
             ConnectionAdapter.Connect(10000);
             return ConnectionAdapter;
         }

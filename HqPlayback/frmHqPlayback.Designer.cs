@@ -39,12 +39,8 @@
             this.btnRun = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.pbShow = new System.Windows.Forms.PictureBox();
-            this.txtCurrentStock = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtUpLimitPrice = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtDownLimitPrice = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtCurrentStock = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -67,10 +63,6 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.label5);
-            this.splitContainer1.Panel2.Controls.Add(this.txtDownLimitPrice);
-            this.splitContainer1.Panel2.Controls.Add(this.label4);
-            this.splitContainer1.Panel2.Controls.Add(this.txtUpLimitPrice);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.txtCurrentStock);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
@@ -175,14 +167,6 @@
             this.pbShow.TabIndex = 0;
             this.pbShow.TabStop = false;
             // 
-            // txtCurrentStock
-            // 
-            this.txtCurrentStock.Location = new System.Drawing.Point(312, 19);
-            this.txtCurrentStock.Multiline = true;
-            this.txtCurrentStock.Name = "txtCurrentStock";
-            this.txtCurrentStock.Size = new System.Drawing.Size(100, 25);
-            this.txtCurrentStock.TabIndex = 6;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -192,39 +176,13 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "当前券码";
             // 
-            // txtUpLimitPrice
+            // txtCurrentStock
             // 
-            this.txtUpLimitPrice.Location = new System.Drawing.Point(114, 63);
-            this.txtUpLimitPrice.Multiline = true;
-            this.txtUpLimitPrice.Name = "txtUpLimitPrice";
-            this.txtUpLimitPrice.Size = new System.Drawing.Size(68, 25);
-            this.txtUpLimitPrice.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(41, 66);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 15);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "涨停价格";
-            // 
-            // txtDownLimitPrice
-            // 
-            this.txtDownLimitPrice.Location = new System.Drawing.Point(312, 63);
-            this.txtDownLimitPrice.Multiline = true;
-            this.txtDownLimitPrice.Name = "txtDownLimitPrice";
-            this.txtDownLimitPrice.Size = new System.Drawing.Size(100, 25);
-            this.txtDownLimitPrice.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(239, 66);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 15);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "跌停价格";
+            this.txtCurrentStock.Location = new System.Drawing.Point(312, 19);
+            this.txtCurrentStock.Multiline = true;
+            this.txtCurrentStock.Name = "txtCurrentStock";
+            this.txtCurrentStock.Size = new System.Drawing.Size(100, 25);
+            this.txtCurrentStock.TabIndex = 6;
             // 
             // frmHqPlayback
             // 
@@ -261,10 +219,6 @@
         private System.Windows.Forms.TextBox txtDelay;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCurrentStock;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtDownLimitPrice;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtUpLimitPrice;
     }
 }
 

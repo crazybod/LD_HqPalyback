@@ -1,0 +1,16 @@
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Release\HqPlayback.exe.config
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Release\HqPlayback.exe
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Release\HqPlayback.pdb
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Release\LDBizTagDefine.dll
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Release\LDsdkDefine.dll
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Release\LDsdkDefineEx.dll
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Release\LDBizTagDefine.pdb
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Release\LDsdkDefine.pdb
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\bin\Release\LDsdkDefineEx.pdb
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Release\HqPlayback.frmHqPlayback.resources
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Release\HqPlayback.Properties.Resources.resources
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Release\HqPlayback.csproj.GenerateResource.cache
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Release\HqPlayback.csproj.CoreCompileInputs.cache
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Release\HqPlayback.csproj.CopyComplete
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Release\HqPlayback.exe
+C:\Users\Crazy无罪\source\repos\HqPlayback\HqPlayback\obj\Release\HqPlayback.pdb
